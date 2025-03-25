@@ -18,19 +18,20 @@
 [files]
 # Uncomment examples below
 dotsyncrc
-#ack/ackrc
-#aptitude
-#bin:bin
-#ctags/ctags
-#cmus
-#curl/curlrc
-#git/gitconfig
-#git/gitignore
-#git/gitattributes
-#git/tigrc
-#git/gitk
-#gnupg
-#grc
+dotfile
+ack/ackrc
+aptitude
+bin:bin
+ctags/ctags
+cmus
+curl/curlrc
+git/gitconfig
+git/gitignore
+git/gitattributes
+git/tigrc
+git/gitk
+gnupg
+grc
 #input/editrc
 #input/inputrc
 #irssi
@@ -44,8 +45,8 @@ dotsyncrc
 #ncmpcpp/config
 #ncmpcpp/error.log
 #postgresql/psqlrc
-#python/pythonrc
-#python/pylintrc
+python/pythonrc
+python/pylintrc
 #rpm/rpmmacros
 #ruby/irbrc
 #ruby/pryrc
@@ -54,31 +55,42 @@ dotsyncrc
 #ruby/rdebugrc
 #ruby/aprc
 #ruby/caprc
-#screen/screenrc
-#shell/hushlogin
-#shell/urlview
-#ssh
+screen/screenrc
+shell/hushlogin
+shell/urlview
+ssh
 #subversion
-#task/task
-#task/taskrc
+task/task
+task/taskrc
 #tmux/tmux.conf
 #tmux/tmuxinator
 #vim/dotvim:.vim
 #vim/vimrc
 #vim/gvimrc
-#wget/wgetrc
-#zsh/fasdrc
-#zsh/dotzsh:.zsh
-#zsh/zlogin
-#zsh/zlogout
-#zsh/zprofile
-#zsh/zshenv
-#zsh/zshrc
+wget/wgetrc
+zsh/fasdrc
+zsh/dotzsh:.zsh
+zsh/zshrc
+zsh/zshenv
+zsh/zprofile
+zsh/zlogin
+zsh/zlogout
 [endfiles]
 
 # Hosts to sync
 ## hostname                     type=masterhost, ANY or NONE    files=dotfile:tolink,another:tolink
+hostname.example.com        	git=ANY             		file=dotfile1/dotfile1,dotfile2:.linkto
 [hosts]
+laptop                       git=NONE
+desktop                      git=laptop
+mac-mini                     rsync=laptop
+workdesktop                  git=laptop
+workserver1                  rsync=workdesktop
+workserver2                  rsync=workdesktop
+workserver3                  rsync=workdesktop
+remoteserver1                rsync=workdesktop
+remoteserver1                rsync=workdesktop
+remoteserver3                rsync=workdesktop
 #host1.example.com               git=ANY                        files=custom/dotfile    #git repo, pull from anywhere and link a custom dotfile
 #host2.example.com               git=ANY                                                #git repo, pull from anywhere
 #host3.example.com               git=ANY                                                #git repo, pull from anywhere
